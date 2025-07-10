@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="text-center">
+        <a href="/index.html" class="text-blue-600 mb-4 inline-block">&larr; Back to Home</a>
+        <div class="mb-2">
+            <svg class="mx-auto h-12 w-12 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m4.5-1.253C19.832 18.477 21.418 18 23 18V6.253c-1.168-.477-2.754-.253-4.5-.253s-3.332-.224-4.5.253z">
+                </path>
+            </svg>
+        </div>
+        <h2 class="text-2xl font-bold text-gray-900 mb-2">Student Login</h2>
+        <p class="text-gray-600 mb-6">Enter your student ID to access the library</p>
+        <div class="bg-white p-6 rounded-lg shadow-md max-w-md w-full">
+            <h3 class="text-lg font-semibold mb-4">Login to Your Account</h3>
+            <p class="text-gray-600 mb-4">Use your student ID to access your library account</p>
+            <form>
+                <div class="mb-4">
+                    <input type="text" placeholder="Enter your student ID (e.g., STU2024001)"
+                        class="w-full p-2 border rounded-md">
+                </div>
+                <div class="mb-4">
+                    <input type="text" placeholder="Enter your Password" class="w-full p-2 border rounded-md">
+                </div>
+                <a href="/User.html" type="submit"
+                    class="w-full bg-black text-white p-2 rounded-md hover:bg-gray-800">Login</a>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
