@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Borrowing</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
+        <h2 class="text-xl font-bold mb-4">Borrow Book</h2>
+        <p class="text-gray-600 mb-4">Process book borrowing for a student</p>
+        <div class="mb-4">
+            <label class="block text-gray-700">Book ID</label>
+            <input type="text" value="BK001" class="w-full p-2 border rounded mt-1" readonly>
+        </div>
+        <div class="mb-4">
+            <label class="block text-gray-700">Book Title</label>
+            <input type="text" value="Introduction to Algorithms" class="w-full p-2 border rounded mt-1" readonly>
+        </div>
+        <div class="mb-4">
+            <label class="block text-gray-700">Borrow Date (Today)</label>
+            <input type="text" value="2025-07-12" class="w-full p-2 border rounded mt-1" readonly>
+        </div>
+        <div class="mb-4">
+            <label class="block text-gray-700">Due Date (14 days later)</label>
+            <input type="text" value="2025-07-26" class="w-full p-2 border rounded mt-1" readonly>
+        </div>
+        <div class="mb-4">
+            <label class="block text-gray-700">Student ID *</label>
+            <input type="text" placeholder="Enter student ID (e.g., STU024001)" class="w-full p-2 border rounded mt-1">
+        </div>
+        <div class="flex justify-end gap-4">
+            <button class="bg-gray-300 text-gray-700 p-2 rounded">Cancel</button>
+            <button class="bg-blue-500 text-white p-2 rounded">Process Borrowing</button>
+        </div>
+    </div>
+</body>
+
+</html>
