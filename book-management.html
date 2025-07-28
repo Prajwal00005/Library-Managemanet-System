@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -7,10 +7,9 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
-<body class="bg-stone-50  h-screen w-full">
-
-    <header class=" bg-white shadow-sm py-4">
-        <div class="container mx-auto  px-5">
+<body class="bg-stone-50 h-screen w-full">
+    <header class="bg-white shadow-sm py-4">
+        <div class="container mx-auto px-5">
             <div class="flex justify-between items-center">
                 <div class="flex items-center gap-6 cursor-pointer">
                     <a href="/admin.html" class="text-[15px] font-semibold bg-stone-300 px-2 py-1 rounded-lg">
@@ -19,33 +18,29 @@
                     <div class="flex gap-2">
                         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="26" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            class="lucide mt-1 lucide-book-open h-4 w-4 md:h-7 md:w-7 text-blue-600 ">
+                            class="lucide mt-1 lucide-book-open h-4 w-4 md:h-7 md:w-7 text-blue-600">
                             <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
                             <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
                         </svg>
-                        <span class="text-stone-800 font-bold md:text-xl lg:text-[21px] ">School Library</span>
+                        <span class="text-stone-800 font-bold md:text-xl lg:text-[21px]">School Library</span>
                     </div>
                 </div>
 
                 <a href="/book-form.html" class="px-3 rounded-lg py-2 bg-stone-800 text-white">+ Add Books</a>
             </div>
         </div>
-
     </header>
-
 
     <!-- main body -->
 
-    <section class="container mx-auto px-4 ">
-
-
+    <section class="container mx-auto px-4">
         <div class="mt-5 grid grid-cols-1 md:grid-cols-4 gap-5">
-
-
             <div class="border-1 border-stone-200 p-7 flex items-center justify-between shadow-lg">
                 <div>
-                    <div class="font-semibold text-lg text-stone-600 ">Total Books</div>
-                    <div class="font-bold text-xl md:text-2xl text-green-700">2,947</div>
+                    <div class="font-semibold text-lg text-stone-600">Total Books</div>
+                    <div class="font-bold text-xl md:text-2xl text-green-700">
+                        2,947
+                    </div>
                 </div>
                 <div>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -57,10 +52,12 @@
                 </div>
             </div>
 
-            <div class="border-1 border-stone-200  p-7  flex items-center justify-between shadow-lg">
+            <div class="border-1 border-stone-200 p-7 flex items-center justify-between shadow-lg">
                 <div>
-                    <div class="font-semibold text-lg text-stone-600 ">Available</div>
-                    <div class="font-bold text-xl md:text-2xl text-orange-700">1247</div>
+                    <div class="font-semibold text-lg text-stone-600">Available</div>
+                    <div class="font-bold text-xl md:text-2xl text-orange-700">
+                        1247
+                    </div>
                 </div>
                 <div>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -72,9 +69,9 @@
                 </div>
             </div>
 
-            <div class="border-1 border-stone-200  p-7  flex items-center justify-between shadow-lg">
+            <div class="border-1 border-stone-200 p-7 flex items-center justify-between shadow-lg">
                 <div>
-                    <div class="font-semibold text-lg text-stone-600 ">Borrowed</div>
+                    <div class="font-semibold text-lg text-stone-600">Borrowed</div>
                     <div class="font-bold text-xl md:text-2xl text-orange-900">529</div>
                 </div>
                 <div>
@@ -87,9 +84,9 @@
                 </div>
             </div>
 
-            <div class="border-1 border-stone-200  p-7  flex items-center justify-between  shadow-lg">
+            <div class="border-1 border-stone-200 p-7 flex items-center justify-between shadow-lg">
                 <div>
-                    <div class="font-semibold text-lg text-stone-600 ">Categories</div>
+                    <div class="font-semibold text-lg text-stone-600">Categories</div>
                     <div class="font-bold text-xl md:text-2xl text-purple-600">326</div>
                 </div>
                 <div>
@@ -101,46 +98,50 @@
                     </svg>
                 </div>
             </div>
-
         </div>
 
-        <div class="mt-10 shadow-sm border-1 border-stone-200 w-full p-5 ">
+        <div class="mt-10 shadow-sm border-1 border-stone-200 w-full p-5">
             <div class="flex my-3 gap-1 items-center">
-                <div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                        class="lucide lucide-search h-5 w-5 mr-2">
-                        <circle cx="11" cy="11" r="8"></circle>
-                        <path d="m21 21-4.3-4.3"></path>
-                    </svg></div>
-                <div class="font-semibold text-xl md:text-3xl">Search & Filter Books</div>
-            </div>
-
-            <div class="flex mb-3 gap-3">
-                <input class="p-2 w-full rounded-lg placeholder:text-stone-400 border-1 border-stone-200 " type="text"
-                    placeholder="Search books by title, author, category" />
-                <button class="px-2 py-1 font-semibold text-xl text-white bg-black flex items-center  rounded-lg">
+                <div>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                         class="lucide lucide-search h-5 w-5 mr-2">
                         <circle cx="11" cy="11" r="8"></circle>
                         <path d="m21 21-4.3-4.3"></path>
-                    </svg><span>Search</span></button>
+                    </svg>
+                </div>
+                <div class="font-semibold text-xl md:text-3xl">
+                    Search & Filter Books
+                </div>
+            </div>
+
+            <div class="flex mb-3 gap-3">
+                <input class="p-2 w-full rounded-lg placeholder:text-stone-400 border-1 border-stone-200" type="text"
+                    placeholder="Search books by title, author, category" />
+                <button class="px-2 py-1 font-semibold text-xl text-white bg-black flex items-center rounded-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-search h-5 w-5 mr-2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.3-4.3"></path>
+                    </svg><span>Search</span>
+                </button>
             </div>
 
             <div class="grid grid-cols-2 md:grid-cols-5 lg:grid-cols-5 gap-3">
-                <select class="p-2  rounded-lg text-stone-800 border-1 border-stone-200">
+                <select class="p-2 rounded-lg text-stone-800 border-1 border-stone-200">
                     <option value="">Category</option>
                 </select>
 
-                <select class="p-2  rounded-lg text-stone-800 border-1 border-stone-200">
+                <select class="p-2 rounded-lg text-stone-800 border-1 border-stone-200">
                     <option value="">Class</option>
                 </select>
 
-                <select class="p-2  rounded-lg text-stone-800 border-1 border-stone-200">
+                <select class="p-2 rounded-lg text-stone-800 border-1 border-stone-200">
                     <option value="">Faculty</option>
                 </select>
 
-                <select class="p-2  rounded-lg text-stone-800 border-1 border-stone-200">
+                <select class="p-2 rounded-lg text-stone-800 border-1 border-stone-200">
                     <option value="">Status</option>
                 </select>
 
@@ -155,57 +156,72 @@
             </div>
         </div>
 
-
         <div class="mt-10 shadow-sm border-1 border-stone-200 w-full p-5">
             <h1 class="font-bold text-xl md:text-2xl text-stone-900">All Books</h1>
             <p class="text-stone-400">Manage your library book collection</p>
             <div class="mt-10 shadow-sm border-1 border-stone-200 w-full p-5">
-
                 <div class="w-full overflow-x-auto">
                     <table class="w-full border-separate border-spacing-0">
                         <thead class="bg-stone-50 text-stone-500">
                             <tr>
-                                <th class="px-2 py-2 text-left text-xs font-medium md:px-4 md:py-3 md:text-sm">Book</th>
-                                <th class="px-2 py-2 text-left text-xs font-medium md:px-4 md:py-3 md:text-sm">Category
+                                <th class="px-2 py-2 text-left text-xs font-medium md:px-4 md:py-3 md:text-sm">
+                                    Book
                                 </th>
-                                <th class="px-2 py-2 text-left text-xs font-medium md:px-4 md:py-3 md:text-sm">Class
+                                <th class="px-2 py-2 text-left text-xs font-medium md:px-4 md:py-3 md:text-sm">
+                                    Category
                                 </th>
-                                <th class="px-2 py-2 text-left text-xs font-medium md:px-4 md:py-3 md:text-sm">Faculty
+                                <th class="px-2 py-2 text-left text-xs font-medium md:px-4 md:py-3 md:text-sm">
+                                    Class
                                 </th>
-                                <th class="px-2 py-2 text-left text-xs font-medium md:px-4 md:py-3 md:text-sm">Copies
+                                <th class="px-2 py-2 text-left text-xs font-medium md:px-4 md:py-3 md:text-sm">
+                                    Faculty
                                 </th>
-                                <th class="px-2 py-2 text-left text-xs font-medium md:px-4 md:py-3 md:text-sm">Action
+                                <th class="px-2 py-2 text-left text-xs font-medium md:px-4 md:py-3 md:text-sm">
+                                    Copies
+                                </th>
+                                <th class="px-2 py-2 text-left text-xs font-medium md:px-4 md:py-3 md:text-sm">
+                                    Action
                                 </th>
                             </tr>
                         </thead>
                         <tbody class="text-stone-500">
-
                             <tr class="border-b border-stone-200">
                                 <td class="py-2">
-                                    <div class="flex  items-start gap-2 md:gap-4">
-                                        <img src="assets/anime.png" class="w-10 h-10 object-cover md:w-12 md:h-12">
+                                    <div class="flex items-start gap-2 md:gap-4">
+                                        <img src="assets/anime.png" class="w-10 h-10 object-cover md:w-12 md:h-12" />
                                         <div class="flex flex-col">
-                                            <h3 class="text-sm font-semibold text-stone-900 md:text-base">Advance
-                                                Computer Network</h3>
-                                            <p class="text-[0.65rem] text-stone-500 md:text-sm">by Dr. John Smith</p>
-                                            <p class="text-[0.65rem] text-stone-500 md:text-sm">Shelf: CS-001-A</p>
+                                            <h3 class="text-sm font-semibold text-stone-900 md:text-base">
+                                                Advance Computer Network
+                                            </h3>
+                                            <p class="text-[0.65rem] text-stone-500 md:text-sm">
+                                                by Dr. John Smith
+                                            </p>
+                                            <p class="text-[0.65rem] text-stone-500 md:text-sm">
+                                                Shelf: CS-001-A
+                                            </p>
                                         </div>
                                     </div>
                                 </td>
                                 <td class="px-2 py-2">
-                                    <div class="text-[0.65rem] md:text-sm text-stone-900 font-semibold">Computer Science
+                                    <div class="text-[0.65rem] md:text-sm text-stone-900 font-semibold">
+                                        Computer Science
                                     </div>
                                 </td>
                                 <td class="px-2 py-2">
-                                    <div class="text-[0.65rem] md:text-sm text-stone-900 font-semibold">4th Year</div>
+                                    <div class="text-[0.65rem] md:text-sm text-stone-900 font-semibold">
+                                        4th Year
+                                    </div>
                                 </td>
                                 <td class="px-2 py-2">
-                                    <div class="text-[0.65rem] md:text-sm text-stone-900 font-semibold">Engineering
+                                    <div class="text-[0.65rem] md:text-sm text-stone-900 font-semibold">
+                                        Engineering
                                     </div>
                                 </td>
                                 <td class="px-2 py-2">
                                     <div class="flex flex-col text-[0.65rem] md:text-sm">
-                                        <div class="text-stone-900 font-semibold">Available: 3</div>
+                                        <div class="text-stone-900 font-semibold">
+                                            Available: 3
+                                        </div>
                                         <div>Total: 5</div>
                                     </div>
                                 </td>
@@ -253,30 +269,41 @@
                             </tr>
                             <tr class="border-b border-stone-200">
                                 <td class="py-2">
-                                    <div class="flex  items-start gap-2 md:gap-4">
-                                        <img src="assets/anime.png" class="w-10 h-10 object-cover md:w-12 md:h-12">
+                                    <div class="flex items-start gap-2 md:gap-4">
+                                        <img src="assets/anime.png" class="w-10 h-10 object-cover md:w-12 md:h-12" />
                                         <div class="flex flex-col">
-                                            <h3 class="text-sm font-semibold text-stone-900 md:text-base">Advance
-                                                Computer Network</h3>
-                                            <p class="text-[0.65rem] text-stone-500 md:text-sm">by Dr. John Smith</p>
-                                            <p class="text-[0.65rem] text-stone-500 md:text-sm">Shelf: CS-001-A</p>
+                                            <h3 class="text-sm font-semibold text-stone-900 md:text-base">
+                                                Advance Computer Network
+                                            </h3>
+                                            <p class="text-[0.65rem] text-stone-500 md:text-sm">
+                                                by Dr. John Smith
+                                            </p>
+                                            <p class="text-[0.65rem] text-stone-500 md:text-sm">
+                                                Shelf: CS-001-A
+                                            </p>
                                         </div>
                                     </div>
                                 </td>
                                 <td class="px-2 py-2">
-                                    <div class="text-[0.65rem] md:text-sm text-stone-900 font-semibold">Computer Science
+                                    <div class="text-[0.65rem] md:text-sm text-stone-900 font-semibold">
+                                        Computer Science
                                     </div>
                                 </td>
                                 <td class="px-2 py-2">
-                                    <div class="text-[0.65rem] md:text-sm text-stone-900 font-semibold">4th Year</div>
+                                    <div class="text-[0.65rem] md:text-sm text-stone-900 font-semibold">
+                                        4th Year
+                                    </div>
                                 </td>
                                 <td class="px-2 py-2">
-                                    <div class="text-[0.65rem] md:text-sm text-stone-900 font-semibold">Engineering
+                                    <div class="text-[0.65rem] md:text-sm text-stone-900 font-semibold">
+                                        Engineering
                                     </div>
                                 </td>
                                 <td class="px-2 py-2">
                                     <div class="flex flex-col text-[0.65rem] md:text-sm">
-                                        <div class="text-stone-900 font-semibold">Available: 3</div>
+                                        <div class="text-stone-900 font-semibold">
+                                            Available: 3
+                                        </div>
                                         <div>Total: 5</div>
                                     </div>
                                 </td>
@@ -324,30 +351,41 @@
                             </tr>
                             <tr class="border-b border-stone-200">
                                 <td class="py-2">
-                                    <div class="flex  items-start gap-2 md:gap-4">
-                                        <img src="assets/anime.png" class="w-10 h-10 object-cover md:w-12 md:h-12">
+                                    <div class="flex items-start gap-2 md:gap-4">
+                                        <img src="assets/anime.png" class="w-10 h-10 object-cover md:w-12 md:h-12" />
                                         <div class="flex flex-col">
-                                            <h3 class="text-sm font-semibold text-stone-900 md:text-base">Advance
-                                                Computer Network</h3>
-                                            <p class="text-[0.65rem] text-stone-500 md:text-sm">by Dr. John Smith</p>
-                                            <p class="text-[0.65rem] text-stone-500 md:text-sm">Shelf: CS-001-A</p>
+                                            <h3 class="text-sm font-semibold text-stone-900 md:text-base">
+                                                Advance Computer Network
+                                            </h3>
+                                            <p class="text-[0.65rem] text-stone-500 md:text-sm">
+                                                by Dr. John Smith
+                                            </p>
+                                            <p class="text-[0.65rem] text-stone-500 md:text-sm">
+                                                Shelf: CS-001-A
+                                            </p>
                                         </div>
                                     </div>
                                 </td>
                                 <td class="px-2 py-2">
-                                    <div class="text-[0.65rem] md:text-sm text-stone-900 font-semibold">Computer Science
+                                    <div class="text-[0.65rem] md:text-sm text-stone-900 font-semibold">
+                                        Computer Science
                                     </div>
                                 </td>
                                 <td class="px-2 py-2">
-                                    <div class="text-[0.65rem] md:text-sm text-stone-900 font-semibold">4th Year</div>
+                                    <div class="text-[0.65rem] md:text-sm text-stone-900 font-semibold">
+                                        4th Year
+                                    </div>
                                 </td>
                                 <td class="px-2 py-2">
-                                    <div class="text-[0.65rem] md:text-sm text-stone-900 font-semibold">Engineering
+                                    <div class="text-[0.65rem] md:text-sm text-stone-900 font-semibold">
+                                        Engineering
                                     </div>
                                 </td>
                                 <td class="px-2 py-2">
                                     <div class="flex flex-col text-[0.65rem] md:text-sm">
-                                        <div class="text-stone-900 font-semibold">Available: 3</div>
+                                        <div class="text-stone-900 font-semibold">
+                                            Available: 3
+                                        </div>
                                         <div>Total: 5</div>
                                     </div>
                                 </td>
@@ -398,11 +436,7 @@
                 </div>
             </div>
         </div>
-
-
     </section>
-
-
 </body>
 
 </html>
