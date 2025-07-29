@@ -14,68 +14,77 @@
     />
   </head>
 
-  <header class="shadow sticky top-0 bg-white z-50 py-3">
-    <div class="text-4xl text-blue-500 px-10 mx-10 justify-between">
-      <i class="fa fa-book-open"></i>
-      <span class="font-semibold text-black">BookNest </span>
-    </div>
-  </header>
-  <body>
-    <div class="container mx-auto px-4">
-      <div class="text-center py-16">
-        <h1 class="font-bold text-4xl py-3 text-gray-900">
-          School Library Management System
-        </h1>
-        <p class="text-slate-500 text-xl">
-          Manage books, students and borrowing efficiently.
-        </p>
+  <body class="bg-white text-gray-800">
+    <!-- Header -->
+    <header class="shadow sticky top-0 bg-white z-50 py-4">
+      <div class="container mx-auto px-6 flex items-center justify-between">
         <div
-          class="grid grid-cols-1 md:grid-cols-2  gap-y-3 gap-x-4 lg:gap-8 max-w-4xl mx-auto py-16"
+          class="text-2xl sm:text-3xl font-bold text-blue-500 flex items-center gap-2"
         >
-          <div class="mb-5 shadow-xl  border hover:shadow-2xl rounded-lg py-5 px-6">
-            <div class="justify-center mb-5">
-              <div
-                class="flex items-center justify-center text-3xl mx-auto rounded-full w-16 h-16 text-blue-600 bg-blue-200 mb-4"
-              >
-                <i class="fa fa-users"></i>
-              </div>
+          <i class="fa fa-book-open"></i>
+          <span class="text-black">BookNest</span>
+        </div>
+      </div>
+    </header>
 
-              <h1 class="font-bold text-2xl">Student Portal</h1>
-              <p class="text-sm text-slate-500">
-                Access your library account and browse book.
-              </p>
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-16 text-center">
+      <h1 class="text-2xl md:text-4xl font-bold mb-3">
+        School Library Management System
+      </h1>
+      <p class="text-slate-500 text-sm md:text-lg max-w-2xl mx-auto mb-10">
+        Manage books, students, and borrowing efficiently.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        <!-- Student Portal -->
+        <div
+          class="shadow-xl hover:shadow-2xl border rounded-lg py-8 px-6 transition-all duration-300"
+        >
+          <div class="flex flex-col items-center mb-5">
+            <div
+              class="flex items-center justify-center text-3xl rounded-full w-16 h-16 text-blue-600 bg-blue-200 mb-4"
+            >
+              <i class="fa fa-users"></i>
             </div>
+            <h2 class="font-bold text-xl md:text-2xl mb-1">Student Portal</h2>
+            <p class="text-sm text-slate-500">
+              Access your library account and browse books.
+            </p>
+          </div>
+          <a href="student-login.html" type="button">
             <button
-              type="submit"
-              class="rounded-md text-white bg-black hover:bg-slate-500 py-2 w-full"
+              class="w-full bg-black text-white py-2 rounded-md hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black transition"
             >
               Student Login
             </button>
-          </div>
-          <div class="mb-5 shadow-xl hover:shadow-2xl border rounded-lg py-5 px-6 ">
-            <div class="justify-center mb-5">
-              <div
-                class="flex items-center justify-center text-3xl mx-auto rounded-full w-16 h-16 text-green-600 bg-green-200 mb-4"
-              >
-                <i class="fa fa-user-tie"></i>
-              </div>
-
-              <h1 class="font-bold text-2xl">Admin Portal</h1>
-              <p class="text-sm text-slate-500">
-                Manage books, students and browsing.
-              </p>
-            </div>
-            <button
-              type="submit"
-              class="rounded-md text-black border-zinc-400 border-2 border-zinc-400 hover:bg-slate-500 py-2 w-full"
-            ><a href="login.html">Admin Login</a>
-             
-            </button>
-          </div>
+          </a>
         </div>
-        
+
+        <!-- Admin Portal -->
+        <div
+          class="shadow-xl hover:shadow-2xl border rounded-lg py-8 px-6 transition-all duration-300"
+        >
+          <div class="flex flex-col items-center mb-5">
+            <div
+              class="flex items-center justify-center text-3xl rounded-full w-16 h-16 text-green-600 bg-green-200 mb-4"
+            >
+              <i class="fa fa-user-tie"></i>
+            </div>
+            <h2 class="font-bold text-xl md:text-2xl mb-1">Admin Portal</h2>
+            <p class="text-sm text-slate-500">
+              Manage books, students, and borrowing activity.
+            </p>
+          </div>
+          <a href="/login.html">
+            <button
+              class="w-full text-black font-semibold border border-stone-200 py-2 rounded-md hover:bg-stone-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-stone-400 transition"
+            >
+              Admin Login
+            </button>
+          </a>
         </div>
       </div>
-    </div>
+    </main>
   </body>
 </html>
