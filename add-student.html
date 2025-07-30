@@ -1,216 +1,256 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add New Student</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
-<header class="shadow sticky top-0 bg-white z-50 py-3">
-  <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 relative">
-    <div class="flex items-center justify-between gap-10 px-10">
-      <div class="flex items-center gap-3">
-        <i class="fa fa-arrow-left"></i>
-        <a href="admin.html">Back to Dashboard</a>
-
-        <div class="text-blue-500 text-2xl gap-3">
-          <i class="fa fa-users"></i>
-          <span class="font-bold text-black">Add New Student</span>
+  <body>
+    <!-- Header -->
+    <header class="shadow sticky top-0 bg-white z-50 py-3">
+      <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 relative">
+        <div class="flex items-center justify-between gap-10 px-10">
+          <div class="flex items-center gap-3">
+            <i class="fa fa-arrow-left"></i>
+            <a href="admin.html">Back to Dashboard</a>
+            <div class="text-blue-500 text-2xl gap-3">
+              <i class="fa fa-users"></i>
+              <span class="font-bold text-black">Add New Student</span>
+            </div>
+          </div>
+          <button
+            class="lg:absolute right-16 rounded-md bg-black mx-auto px-5 py-2 gap-2 items-center"
+          >
+            <i class="fa fa-print text-white"></i>
+            <span class="text-bold lg:text-md text-white">Save Student</span>
+          </button>
         </div>
       </div>
+    </header>
 
-      <button class="lg:absolute right-16 rounded-md bg-black mx-auto px-5 py-2 gap-2 items-center">
+    <!-- Personal Information -->
+    <div
+      class="shadow-xl border bg-white mt-5 rounded-lg px-10 mx-auto py-10 md:w-2/3 lg:w-2/4"
+    >
+      <div class="mb-5">
+        <h1 class="font-bold text-2xl py-1">Personal information</h1>
+        <p class="text-md text-gray-500">
+          Enter the student's personal details.
+        </p>
+      </div>
+      <form class="text-sm font-semibold text-gray-800">
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="pb-4">
+            <label for="studentId">Student Id *</label>
+            <input
+              type="text"
+              id="studentId"
+              required
+              placeholder="e.g., STU2024001"
+              class="rounded-md w-full py-2 px-3 border-2 font-sm border-zinc-200 focus:outline-none focus:ring-2 focus:ring-green-300 mt-1"
+            />
+          </div>
+          <div class="pb-4">
+            <label for="fullname">Full Name *</label>
+            <input
+              type="text"
+              id="fullname"
+              required
+              placeholder="Enter full name"
+              class="rounded-md w-full py-2 px-3 font-sm border-2 border-zinc-200 focus:outline-none focus:ring-2 focus:ring-green-300 mt-1"
+            />
+          </div>
+        </div>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="pb-4">
+            <label for="email">Email Address *</label>
+            <input
+              type="email"
+              id="email"
+              required
+              placeholder="student1@gmail.com"
+              class="rounded-md w-full py-2 px-3 font-sm border-2 border-zinc-200 focus:outline-none focus:ring-2 focus:ring-green-300 mt-1"
+            />
+          </div>
+          <div class="pb-4">
+            <label for="number">Phone Number *</label>
+            <input
+              type="text"
+              id="number"
+              required
+              placeholder="+9779810121314"
+              class="rounded-md w-full py-2 px-3 font-sm border-2 border-zinc-200 focus:outline-none focus:ring-2 focus:ring-green-300 mt-1"
+            />
+          </div>
+        </div>
+        <div class="pb-4">
+          <label for="address">Address *</label>
+          <input
+            type="text"
+            id="address"
+            required
+            placeholder="Enter full address"
+            class="rounded-md w-full py-2 px-3 font-sm border-2 border-zinc-200 focus:outline-none focus:ring-2 focus:ring-green-300 mt-1"
+          />
+        </div>
+        <div class="pb-4">
+          <label for="parentName">Parent/Guardian name *</label>
+          <input
+            type="text"
+            id="parentName"
+            required
+            placeholder="Enter parent's or guardian's name"
+            class="rounded-md w-full py-2 px-3 font-sm border-2 border-zinc-200 focus:outline-none focus:ring-2 focus:ring-green-300 mt-1"
+          />
+        </div>
+      </form>
+    </div>
+
+    <!-- Academic Info -->
+    <div
+      class="shadow-xl border bg-white mt-5 rounded-lg px-10 mx-auto py-6 md:w-2/3 lg:w-2/4"
+    >
+      <div class="mb-5">
+        <h1 class="font-bold text-2xl py-1">Academic Information</h1>
+        <p class="text-md text-gray-500">
+          Enter the student's academic details.
+        </p>
+      </div>
+      <form class="text-sm font-semibold text-gray-800">
+        <div class="p-6 pt-0 space-y-6">
+          <div class="grid md:grid-cols-3 gap-6">
+            <div>
+              <label for="faculty">Faculty *</label>
+              <select
+                id="faculty"
+                name="faculty"
+                class="block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-slate-200 focus:border-slate-500"
+              >
+                <option value="">Select faculty</option>
+                <option value="BCA">BCA</option>
+                <option value="BBS">BBS</option>
+                <option value="Science">Science</option>
+              </select>
+            </div>
+            <div>
+              <label for="studentClass">Class *</label>
+              <select
+                id="studentClass"
+                name="studentClass"
+                class="block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-slate-200 focus:border-slate-500"
+              >
+                <option value="">Select class</option>
+                <option value="1st year">1st Year</option>
+                <option value="2nd year">2nd Year</option>
+                <option value="3rd year">3rd Year</option>
+                <option value="4th year">4th Year</option>
+              </select>
+            </div>
+            <div>
+              <label for="selectSubject">Select Subject *</label>
+              <select
+                id="selectSubject"
+                name="selectSubject"
+                class="block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-slate-200 focus:border-slate-500"
+              >
+                <option value="">Select subject</option>
+                <option value="Math">Math</option>
+                <option value="Physics">Physics</option>
+                <option value="Computer">Computer</option>
+              </select>
+            </div>
+          </div>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <label for="rollNumber">Roll Number</label>
+              <input
+                type="text"
+                id="rollNumber"
+                required
+                placeholder="Enter roll number"
+                class="rounded-md w-full py-2 px-3 font-sm border-2 border-zinc-200 focus:outline-none focus:ring-2 focus:ring-green-300 mt-1"
+              />
+            </div>
+            <div>
+              <label for="admissionDate">Admission Date</label>
+              <input
+                type="date"
+                id="admissionDate"
+                required
+                class="flex h-10 w-full rounded-md border border-input px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-ring"
+              />
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!-- Library Setting -->
+    <div
+      class="shadow-xl border bg-white mt-5 rounded-lg px-10 mx-auto py-6 md:w-2/3 lg:w-2/4"
+    >
+      <div class="mb-5">
+        <h1 class="font-bold text-2xl py-1">Library Setting</h1>
+        <p class="text-md text-gray-500">
+          Configure library access and browsing limits.
+        </p>
+      </div>
+      <form class="text-sm font-semibold text-gray-800">
+        <div class="p-6 pt-0 space-y-6">
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <label for="borrowingLimit">Borrowing Limit</label>
+              <select
+                id="borrowingLimit"
+                name="borrowingLimit"
+                class="block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-slate-200 focus:border-slate-500"
+              >
+                <option value="">Select limit</option>
+                <option value="2">2 books</option>
+                <option value="3">3 books</option>
+                <option value="5">5 books</option>
+              </select>
+            </div>
+            <div>
+              <label for="accountStatus">Account Status</label>
+              <select
+                id="accountStatus"
+                name="accountStatus"
+                class="block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-slate-200 focus:border-slate-500"
+              >
+                <option value="">Select status</option>
+                <option value="active">Active</option>
+                <option value="inactive">Inactive</option>
+                <option value="suspended">Suspended</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!-- Bottom Buttons -->
+    <div
+      class="flex justify-end space-x-4 mt-5 rounded-lg px-10 mx-auto py-4 md:w-2/3 lg:w-2/4 mb-8"
+    >
+      <button
+        class="bg-white shadow-lg hover:shadow-xl hover:bg-slate-100 px-4 py-2 rounded border font-semibold"
+      >
+        Save as Draft
+      </button>
+      <button class="rounded-md bg-black px-5 py-2 flex items-center gap-2">
         <i class="fa fa-print text-white"></i>
-        <span class="text-bold lg:text-md text-white">Save Student</span>
+        <span class="text-white font-semibold">Save Student</span>
       </button>
     </div>
-  </div>
-</header>
-
-<body>
-  <div
-    class="shadow-xl border bg-white mt-5 rounded-lg px-10 mx-auto py-10 md:w-2/3 lg:w-2/4 items-center justify-center">
-    <div class="mb-5">
-      <h1 class="font-bold text-2xl py-1">Personal information</h1>
-      <p class="text-md text-gray-500">
-        Enter the student's personal details.
-      </p>
-    </div>
-    <form class="text-sm font-semibold text-gray-800">
-      <div class="grid md:grid-cols-2 gap-6">
-        <div class="pb-4">
-          <label for="studentId ">Student Id * </label>
-          <input type="text" id="studenId" required placeholder="e.g., STU2024001"
-            class="rounded-md w-full py-2 px-3 border-2 font-sm border-zinc-200 focus:outline-none focus:ring-2 focus:ring-green-300 mt-1" />
-        </div>
-        <div class="pb-4">
-          <label for="username ">Full Name * </label>
-          <input type="text" id="fullname" required placeholder="Enter full name"
-            class="rounded-md w-full py-2 px-3 font-sm border-2 border-zinc-200 focus:outline-none focus:ring-2 focus:ring-green-300 mt-1" />
-        </div>
-      </div>
-      <div class="grid md:grid-cols-2 gap-6">
-        <div class="pb-4">
-          <label for="emailaddress ">Email Address * </label>
-          <input type="email" id="email" required placeholder="student1@gmail.com"
-            class="rounded-md w-full py-2 px-3 font-sm border-2 border-zinc-200 focus:outline-none focus:ring-2 focus:ring-green-300 mt-1" />
-        </div>
-        <div class="pb-4">
-          <label for="phone ">Phone Number * </label>
-          <input type="phonenumber" id="number" required placeholder="+9779810121314"
-            class="rounded-md w-full py-2 px-3 font-sm border-2 border-zinc-200 focus:outline-none focus:ring-2 focus:ring-green-300 mt-1" />
-        </div>
-      </div>
-      <div class="pb-2">
-        <label for="address ">Address * </label>
-        <input type="adress" id="address" required placeholder="Enter full address"
-          class="rounded-md w-full py-2 px-3 font-sm border-2 border-zinc-200 focus:outline-none focus:ring-2 focus:ring-green-300 mt-1" />
-      </div>
-      <div class=" mt-3">
-        <label for="parentsName">Parent/Guardian name *</label>
-
-        <input type="text" id="parentName" required placeholder="Enter parents or guardian name"
-          class="rounded-md w-full py-2 font-sm px-3 border-2 border-zinc-200 focus:outline-none focus:ring-2 focus:ring-green-300 mt-1" />
-      </div>
-  </div>
-
-  </form>
-  </div>
-  <!-- Academic info -->
-  <div
-    class="shadow-xl border bg-white mt-5 rounded-lg px-10 mx-auto py-1  md:w-2/3 lg:w-2/4 items-center justify-center">
-
-    <div class="mb-5">
-      <h1 class="font-bold text-2xl py-1">Academic Information</h1>
-      <p class="text-md text-gray-500">
-        Enter the student's academic details.
-      </p>
-    </div>
-    <form class="text-sm font-semibold text-gray-800">
-      <div class="p-6 pt-0 space-y-6">
-        <div class="grid md:grid-cols-3 gap-6">
-          <div class="pb-4">
-            <label for="faculty ">Faculty * </label>
-            <select id="studentClass" name="studentClass"
-              class="block w-full px-4 py-2  border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-slate-200 focus:border-slate-500">
-              <option value=" ">Select faculty</option>
-              <option value="BCA">BCA</option>
-              <option value="BBS">BBS</option>
-              <option value="Science">Science</option>
-
-            </select>
-          </div>
-          <div class="pb-4">
-            <label for="username ">class * </label>
-            <select id="studentClass" name="studentClass"
-              class="block w-full px-4 py-2  border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-slate-200 focus:border-slate-500">
-              <option value=" ">Select class</option>
-              <option value="1st year">1st Year</option>
-              <option value="2nd year">2nd Year</option>
-              <option value="3rd year">3rd Year</option>
-              <option value="4th year">$th Year</option>
-
-            </select>
-          </div>
-          <div class="pb-4">
-            <label for="selectSubject">Select Subject * </label>
-            <select id="selectSubject" name="SelectSubject"
-              class="block w-full px-4 py-2  border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-slate-200 focus:border-slate-500">
-              <option value=" ">Select Subject</option>
-              <option value="1st year">1st Year</option>
-              <option value="2nd year">2nd Year</option>
-              <option value="3rd year">3rd Year</option>
-              <option value="4th year">$th Year</option>
-
-            </select>
-          </div>
-
-        </div>
-        <div class="grid md:grid-cols-2 gap-6">
-          <div class="pb-4">
-            <label for="Rollbumber">Roll Number </label>
-            <input type="rollNumber" id="rollNumber" required placeholder="Enter roll number"
-              class="rounded-md w-full py-2 px-3 font-sm border-2 border-zinc-200 focus:outline-none focus:ring-2 focus:ring-green-300 mt-1" />
-          </div>
-          <div class="pb-1">
-            <label for="admissionDate">Admission Date </label>
-            <input type="date" id="admissionDate" required placeholder="mm/dd/yyyy"
-              class="flex h-10 w-full rounded-md border border-input  px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" />
-          </div>
-        </div>
-
-      </div>
-  </div>
-
-
-
-
-  </form>
-  </div>
-  <!-- Library Setting -->
-  <div
-    class="shadow-xl border bg-white mt-5 rounded-lg px-10 mx-auto py-1  md:w-2/3 lg:w-2/4 items-center justify-center">
-
-    <div class="mb-5">
-      <h1 class="font-bold text-2xl py-1">Library Setting</h1>
-      <p class="text-md text-gray-500">
-        Configure library access and browsing limits.
-      </p>
-    </div>
-    <form class="text-sm font-semibold text-gray-800">
-      <div class="p-6 pt-0 space-y-6">
-        <div class="grid md:grid-cols-2 gap-6">
-          <div class="pb-4">
-            <label for="borrowingLimit">Borrowing limit </label>
-            <select id="borrowingLimit" name="borrowingLimit"
-              class="block w-full px-4 py-2  border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-slate-200 focus:border-slate-500">
-              <option value=" ">Select Limit</option>
-              <option value="2">2 books</option>
-              <option value="3">3 books</option>
-              <option value="5 ">5 books</option>
-
-            </select>
-          </div>
-          <div class="pb-4">
-            <label for="accountStatus">Account Status </label>
-            <select id="accountStatus" name="accountStatus"
-              class="block w-full px-4 py-2  border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-slate-200 focus:border-slate-500">
-              <option value=" ">Select Status</option>
-              <option value="activer">Active</option>
-              <option value="unactivw">Unactive</option>
-              <option value="suspended">Suspended</option>
-
-
-            </select>
-          </div>
-
-        </div>
-
-      </div>
-  </div>
-
-
-
-
-  </form>
-  </div>
-  <!-- bottom -->
-
-  <div class="flex justify-end space-x-4 mt-5 rounded-lg px-10 mx-auto py-1  md:w-2/3 lg:w-2/4 mb-8 gap-5 ">
-    <button class="bg-white shadow-lg hover:shadow-xl hover:bg-slate-100 px-4 py-2 rounded border font-semibold">Save as
-      draft</button>
-    <button class="rounded-md bg-black mx-auto px-5 py-2 ">
-      <i class="fa fa-print text-white"></i>
-      <span class="text-bold lg:text-md text-white">Save Student</span>
-    </button>
-  </div>
-
-
-
-</body>
-
+  </body>
 </html>
