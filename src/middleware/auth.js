@@ -1,10 +1,5 @@
 import { verifyJWT } from "../utils/jwt.js";
 
-/**
- * Authentication Middleware
- 
- */
-
 const auth = async (req, res, next) => {
   try {
     let token;
