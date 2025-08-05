@@ -6,7 +6,7 @@ import authRoutes from "./routes/authRoutes.js";
 
 const app = express();
 
-const PORT = config.PORT;
+const PORT = config.port;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -14,9 +14,9 @@ app.use(express.urlencoded({ extended: true }));
 app.get("/", async (req, res) => {
   res.json({
     status: "OK",
-    name: config.PROJECT_NAME,
-    version: config.PROJECT_VERSION,
-    port: config.PORT,
+    name: config.projectName,
+    version: config.projectVersion,
+    port: config.port,
     message: "Server running sucessfully",
   });
 });
@@ -26,11 +26,12 @@ app.use("/api/auth", authRoutes);
 connectDB()
   .then(() => {
     app.listen(PORT, () => {
-      console.log(`server started at port ${PORT}`);
+      console.log(`Server started at port ${PORT}`);
     });
   })
-  .then(() => {
-    seedAdmin();
+  .then(async () => {
+    const message = await seedAdmin();
+    console.log(message);
   })
   .catch((e) => {
     console.log(e.message);

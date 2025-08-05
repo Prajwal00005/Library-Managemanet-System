@@ -22,6 +22,7 @@ const login = async (req, res) => {
     };
 
     const token = createJWT(payload);
+
     res.cookie("authToken", token, {
       httpOnly: true,
       sameSite: "strict",

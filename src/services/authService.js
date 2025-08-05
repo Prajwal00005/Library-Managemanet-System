@@ -4,7 +4,6 @@ import bcrypt from "bcryptjs";
 const login = async ({ email, studentId, password }) => {
   try {
     // Find user by email or studentId, exclude password
-    // console.log(email, password);
     const user = await Student.findOne({
       $or: [{ email: email }, { studentID: studentId }],
     });
@@ -13,7 +12,6 @@ const login = async ({ email, studentId, password }) => {
 
     const isPasswordValid = bcrypt.compareSync(password, user.password);
 
-    console.log(isPasswordValid);
     if (!isPasswordValid) throw new Error("Incorrect password");
 
     return user;

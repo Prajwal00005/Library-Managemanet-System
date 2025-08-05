@@ -19,15 +19,14 @@ const seedAdmin = async () => {
     });
 
     if (existingAdmin) {
-      console.log("Admin exists:", existingAdmin.email);
-      return;
+      return `Admin already exists with email: ${existingAdmin.email}`;
     }
 
     const hashedPassword = bcrypt.hashSync(adminData.password);
 
     const { studentID, fullName, email, phoneNumber, address } = adminData;
 
-    const admin = await Student.create({
+    await Student.create({
       studentID,
       fullName,
       email,
@@ -37,9 +36,9 @@ const seedAdmin = async () => {
       password: hashedPassword,
     });
 
-    console.log("Admin seeded successfully");
+    return "Admin seeded successfully";
   } catch (error) {
-    console.error("Error seeding admin:", error.message);
+    return `Error seeding admin: ${error.message}`;
   }
 };
 
