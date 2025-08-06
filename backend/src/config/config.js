@@ -8,6 +8,11 @@ const config = {
   jwtSecret: process.env.JWT_SECRET,
   projectName: process.env.PROJECT_NAME,
   projectVersion: process.env.PROJECT_VERSION,
+  cloudinary: {
+    cloudName: process.env.CLOUDINARY_CLOUD_NAME,
+    apikey: process.env.CLOUDINARY_API_KEY,
+    apiSecret: process.env.CLOUDINARY_API_SECRET,
+  },
 };
 
 export default config;

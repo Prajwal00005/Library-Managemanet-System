@@ -1,5 +1,5 @@
 import { ADMIN } from "../constants/roles.js";
-import Student from "../models/Student.js";
+import Student from "../models/StudentModel.js";
 import bcrypt from "bcryptjs";
 
 const adminData = {

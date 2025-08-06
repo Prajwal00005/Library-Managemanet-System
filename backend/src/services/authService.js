@@ -1,4 +1,4 @@
-import Student from "../models/Student.js";
+import Student from "../models/StudentModel.js";
 import bcrypt from "bcryptjs";
 
 const login = async ({ email, studentId, password }) => {
