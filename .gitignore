@@ -1,20 +1,6 @@
 # Node modules
-node_modules/
-
-# Logs
-logs/
-*.log
-
-# Build output
-dist/
-build/
-
-# OS files
-.DS_Store
-Thumbs.db
+/backend/node_modules/
 
 # Env files
 .env
 
-# Editor settings
-.vscod
