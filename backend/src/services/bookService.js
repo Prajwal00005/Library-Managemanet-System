@@ -47,12 +47,28 @@ const createBook = async (data, files) => {
 
 const getBooks = async (query) => {
   try {
-    const { name, faculty, classLevel, categories, limit, offset } = query;
+    const {
+      name,
+      author,
+      bookNumber,
+      faculty,
+      classLevel,
+      categories,
+      limit,
+      offset,
+    } = query;
 
     const sort = JSON.parse(query.sort || "{}");
     const filters = {};
 
-    if (name) filters.title = { $regex: name, $options: "i" };
+    if (name) {
+      filters.title = { $regex: name.trim(), $options: "i" };
+    } else if (author) {
+      filters.author = { $regex: author.trim(), $options: "i" };
+    } else if (bookNumber) {
+      filters.bookNumber = bookNumber.trim();
+    }
+
     if (faculty) filters.faculty = faculty;
     if (classLevel) filters.class = classLevel;
     if (categories) filters.category = { $in: categories.split(",") };
