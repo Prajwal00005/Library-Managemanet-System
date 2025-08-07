@@ -1,5 +1,7 @@
+import { BOOk_DESCRIPTION_PROMPT } from "../constants/prompt.js";
 import Book from "../models/bookModel.js";
 import uploadFile from "../utils/cloudinaryUploader.js";
+import promptGemini from "../utils/gemini.js";
 
 const createBook = async (data, files) => {
   try {
@@ -11,10 +13,15 @@ const createBook = async (data, files) => {
       );
     }
 
+    const promptMessage = BOOk_DESCRIPTION_PROMPT.replace(
+      "%s",
+      data.title
+    ).replace("%s", data?.author);
+
     const formatedData = {
       title: data.title,
       author: data.author,
-      description: data?.description,
+      description: data?.description ?? (await promptGemini(promptMessage)),
       bookNumber: data.bookNumber,
       publisher: data.publisher,
       category: data.category,

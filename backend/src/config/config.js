@@ -13,6 +13,10 @@ const config = {
     apikey: process.env.CLOUDINARY_API_KEY,
     apiSecret: process.env.CLOUDINARY_API_SECRET,
   },
+  gemini: {
+    apiUrl: process.env.GEMINI_URL,
+    apikey: process.env.GEMINI_API_KEY,
+  },
 };
 
 export default config;

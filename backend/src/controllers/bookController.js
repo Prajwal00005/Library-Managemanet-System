@@ -185,7 +185,7 @@ const getBookStatisticsData = async (req, res) => {
       await bookService.getBookStatisticsData();
 
     return res.status(200).json({
-      message: "Classes fetched successfully",
+      message: "statistics data got sucuessfully",
       totalBooks,
       totalAvailableBooks,
       totalCategories,
