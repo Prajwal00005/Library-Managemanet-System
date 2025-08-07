@@ -2,7 +2,7 @@ import { ADMIN, STUDENT } from "../constants/roles.js";
 
 // Middleware to authorize admin users
 const isAdmin = async (req, res, next) => {
-  if (req.req.user.role !== ADMIN) {
+  if (req.user.role !== ADMIN) {
     return res.status(401).json({
       success: false,
       message: "Unauthorized! Admin access required.",

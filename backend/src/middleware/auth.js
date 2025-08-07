@@ -4,20 +4,20 @@ const auth = async (req, res, next) => {
   try {
     let token;
 
-    // 1. Check for token in cookies (commonly used in web apps)
+    // 1. Check for token in cookies
     if (req.cookies && req.cookies.authToken) {
       token = req.cookies.authToken;
     }
 
-    // 2. Check for token in Authorization header (commonly used in APIs)
+    // 2. Check for token in Authorization header
     else if (
       req.headers.authorization &&
       req.headers.authorization.startsWith("Bearer ")
     ) {
-      token = req.headers.authorization.split(" ")[1]; // Extract token after "Bearer"
+      token = req.headers.authorization.split(" ")[1];
     }
 
-    // 3. If no token is found, return 401 Unauthorized
+    // 3. If no token is found, return  Unauthorized
     if (!token) {
       return res.status(401).json({
         success: false,
