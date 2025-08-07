@@ -13,7 +13,7 @@ const createBook = async (data, files) => {
       );
     }
 
-    const promptMessage = BOOk_DESCRIPTION_PROMPT.replace(
+    const promptMessage = BOOK_DESCRIPTION_PROMPT.replace(
       "%s",
       data.title
     ).replace("%s", data?.author);
