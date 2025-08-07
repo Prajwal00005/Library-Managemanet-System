@@ -1,4 +1,4 @@
-import { BOOk_DESCRIPTION_PROMPT } from "../constants/prompt.js";
+import { BOOK_DESCRIPTION_PROMPT } from "../constants/prompt.js";
 import Book from "../models/bookModel.js";
 import uploadFile from "../utils/cloudinaryUploader.js";
 import promptGemini from "../utils/gemini.js";
