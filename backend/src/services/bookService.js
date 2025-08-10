@@ -1,5 +1,7 @@
+import { BOOK_DESCRIPTION_PROMPT } from "../constants/prompt.js";
 import Book from "../models/bookModel.js";
 import uploadFile from "../utils/cloudinaryUploader.js";
+import promptGemini from "../utils/gemini.js";
 
 const createBook = async (data, files) => {
   try {
@@ -11,10 +13,15 @@ const createBook = async (data, files) => {
       );
     }
 
+    const promptMessage = BOOK_DESCRIPTION_PROMPT.replace(
+      "%s",
+      data.title
+    ).replace("%s", data?.author);
+
     const formatedData = {
       title: data.title,
       author: data.author,
-      description: data?.description,
+      description: data?.description ?? (await promptGemini(promptMessage)),
       bookNumber: data.bookNumber,
       publisher: data.publisher,
       category: data.category,
@@ -40,12 +47,28 @@ const createBook = async (data, files) => {
 
 const getBooks = async (query) => {
   try {
-    const { name, faculty, classLevel, categories, limit, offset } = query;
+    const {
+      name,
+      author,
+      bookNumber,
+      faculty,
+      classLevel,
+      categories,
+      limit,
+      offset,
+    } = query;
 
     const sort = JSON.parse(query.sort || "{}");
     const filters = {};
 
-    if (name) filters.title = { $regex: name, $options: "i" };
+    if (name) {
+      filters.title = { $regex: name.trim(), $options: "i" };
+    } else if (author) {
+      filters.author = { $regex: author.trim(), $options: "i" };
+    } else if (bookNumber) {
+      filters.bookNumber = bookNumber.trim();
+    }
+
     if (faculty) filters.faculty = faculty;
     if (classLevel) filters.class = classLevel;
     if (categories) filters.category = { $in: categories.split(",") };
