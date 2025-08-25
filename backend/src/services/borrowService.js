@@ -33,10 +33,7 @@ const createBorrow = async ({ bookNumber, studentID, borrowDate, dueDate }) => {
       "bookId",
       "title author category class faculty shelfNumber availableCopies totalCopies bookNumber publisher"
     )
-    .populate(
-      "studentId",
-      "studentID fullName email phoneNumber"
-    );
+    .populate("studentId", "studentID fullName email phoneNumber");
 };
 
 const fetchBorrowStatistics = async () => {
@@ -75,7 +72,88 @@ const fetchBorrowStatistics = async () => {
   }
 };
 
+// Get All Borrowings
+const getAllBorrowings = async (queryParams) => {
+  const { studentId, bookId, status, className, faculty } = queryParams;
+
+  let filters = {};
+
+  if (studentId) filters.studentId = studentId;
+  if (bookId) filters.bookId = bookId;
+  if (status) filters.status = status;
+  if (className) filters.className = className;
+  if (faculty) filters.faculty = faculty;
+
+  return Borrowing.find(filters);
+};
+
+// Get Borrowing by ID
+const getBorrowingById = async (id) => {
+  return Borrowing.findById(id);
+};
+
+// Update Borrowing
+const updateBorrowing = async (id, updateData) => {
+  const borrowing = await Borrowing.findByIdAndUpdate(id, updateData, {
+    new: true,
+  });
+
+  if (!borrowing) {
+    return null;
+  }
+
+  const today = new Date();
+  const dueDate = new Date(borrowing.dueDate);
+
+  if (borrowing.status === "Borrowed") {
+    const diffTime = dueDate - today;
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+    if (diffDays < 0) {
+      borrowing.status = "Overdue";
+    } else if (diffDays <= 3) {
+      borrowing.status = "Due Soon";
+    }
+
+    await borrowing.save();
+  }
+
+  return borrowing;
+};
+
+// Delete Borrowing
+const deleteBorrowing = async (id) => {
+  return Borrowing.findByIdAndDelete(id);
+};
+
+// Settle Borrowing
+const settleBorrow = async (borrowId) => {
+  const borrow = await Borrowing.findById(borrowId);
+
+  if (!borrow) {
+    throw new Error("Borrow record not found");
+  }
+
+  const book = await Book.findById(borrow.book);
+
+  if (!book) {
+    throw new Error("Book not found for this borrow record");
+  }
+
+  book.availableBooks += 1;
+  await book.save();
+
+  await Borrowing.findByIdAndDelete(borrowId);
+
+  return { message: "Borrow settled successfully, book returned" };
+};
+
 export default {
   createBorrow,
   fetchBorrowStatistics,
+  getAllBorrowings,
+  getBorrowingById,
+  updateBorrowing,
+  deleteBorrowing,
+  settleBorrow,
 };
