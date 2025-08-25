@@ -5,6 +5,7 @@ import connectDB from "./config/database.js";
 import seedAdmin from "./seeder/adminSeed.js";
 import authRoutes from "./routes/authRoutes.js";
 import bookRoutes from "./routes/bookRoutes.js";
+import studentRoutes from "./routes/studentRoutes.js";
 import connectCloudinary from "./config/cloudinary.js";
 import multer from "multer";
 
@@ -30,6 +31,7 @@ app.get("/", async (req, res) => {
 
 app.use("/api/auth", authRoutes);
 app.use("/api", upload.array("images", 5), bookRoutes);
+app.use("/api/students", studentRoutes);
 
 connectDB()
   .then(() => {
